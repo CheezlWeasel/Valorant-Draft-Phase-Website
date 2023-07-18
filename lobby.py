@@ -17,6 +17,7 @@ class Lobby:
     def __init__(self, admin):
         global active_codes
         self.code = create_code(4, active_codes)
+        self.approve_required = False
         self.players = []
         self.admins = [admin]
         self.agent_history = []
