@@ -3,6 +3,7 @@ import random
 
 active_codes = ['']
 
+
 def create_code(length, active_codes):
     code = ''
     characters = string.ascii_uppercase + string.digits
