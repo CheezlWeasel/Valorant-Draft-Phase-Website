@@ -15,18 +15,38 @@ def create_code(length, active_codes):
 
 
 class Lobby:
-    def __init__(self, admin):
+    def __init__(self, admin, name, draft_type, map_type):
         global active_codes
+        self.name = name #string
         self.code = create_code(4, active_codes)
-        self.approve_required = False
         self.players = []
         self.admins = [admin]
+        self.captains = []
+        self.team_names = ['',''] #team 1 is attack, team 2 is defence
         self.agent_history = []
         self.map_history = []
-        self.agent_draft = False
-        self.map_type = 0
+        self.agent_draft = draft_type #Boolean
+        self.map_type = map_type #integer
         #map types are as follows, 
         #0 = Admin picks map Bo1
         #1 = Players pick map Bo1
         #2 = Players pick map Bo3
         #3 = Players pick map Bo5
+
+    def undo_agent(self):
+        if self.agent_history[0] != 0:
+            del self.agent_history[-1]
+        else:
+            print('undo failed')
+        if len(self.agent_history) == 0:
+            self.agent_history = [0]
+          
+    def undo_map(self):
+        if self.map_history[0] != 0:
+            del self.map_history[-1]
+        else:
+            print('undo failed')
+        if len(self.map_history) == 0:
+            self.map_history = [0]
+
+      
