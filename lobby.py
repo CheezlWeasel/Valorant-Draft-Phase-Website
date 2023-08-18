@@ -1,7 +1,7 @@
 import string
 import random
 
-active_codes = ['']
+active_codes = []
 
 
 def create_code(length, active_codes):
