@@ -20,22 +20,36 @@ class Lobby:
     global active_codes
     self.name = name  #string
     self.code = create_code(4, active_codes)
-    self.players = []
     self.admins = [admin]
-    self.captains = []
-    self.coaches = []
-    self.team_names = ['', '']  #team 1 is attack, team 2 is defence
+    self.omega_team = Omega_team() #attackers (left side)
+    self.Alpha_team = Alpha_team() #defenders (right side)
     self.agent_history = []
     self.map_history = []
     self.agent_draft = draft_type  #Boolean
     self.series_type = series_type  #string
     self.all_maps = True
-    #series types are as follows,
+    #series types are as follows,A  
     #A = Admin picks map  Bo1
     #R = random map pick  Bo1
     #BO1 = Players pick map Bo1
     #BO3 = Players pick map Bo3
     #BO5 = Players pick map Bo5
+
+class Omega_team:
+
+  def __init__(self):
+    self.name = ''
+    self.captain = '' 
+    self.players = [] 
+    self.coach = ''
+
+class Alpha_team:
+
+  def __init__(self):
+    self.name = ''
+    self.captain = '' 
+    self.players = [] 
+    self.coach = '' 
 
   def undo_agent(self):
     if self.agent_history[0] != 0:
