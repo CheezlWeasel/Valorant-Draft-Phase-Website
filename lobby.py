@@ -23,6 +23,7 @@ class Lobby:
     self.players = []
     self.admins = [admin]
     self.captains = []
+    self.coaches = []
     self.team_names = ['', '']  #team 1 is attack, team 2 is defence
     self.agent_history = []
     self.map_history = []
