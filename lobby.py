@@ -16,7 +16,7 @@ def create_code(length, active_codes):
 
 class Lobby:
 
-  def __init__(self, admin, name, draft_type, map_type):
+  def __init__(self, admin, name, draft_type, series_type):
     global active_codes
     self.name = name  #string
     self.code = create_code(4, active_codes)
