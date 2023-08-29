@@ -28,13 +28,14 @@ class Lobby:
     self.agent_history = []
     self.map_history = []
     self.agent_draft = draft_type  #Boolean
-    self.map_type = map_type  #integer
+    self.series_type = series_type  #string
     self.all_maps = True
-    #map types are as follows,
-    #0 = Admin picks map Bo1
-    #1 = Players pick map Bo1
-    #2 = Players pick map Bo3
-    #3 = Players pick map Bo5
+    #series types are as follows,
+    #A = Admin picks map  Bo1
+    #R = random map pick  Bo1
+    #BO1 = Players pick map Bo1
+    #BO3 = Players pick map Bo3
+    #BO5 = Players pick map Bo5
 
   def undo_agent(self):
     if self.agent_history[0] != 0:
