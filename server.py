@@ -8,7 +8,7 @@ socketio = SocketIO(app, async_mode="eventlet")
 
 @app.route("/")
 def main():
-    return render_template("[PLACEHOLDER]")
+    return render_template("Main.html")
 
 @app.route("/create")
 def create():
